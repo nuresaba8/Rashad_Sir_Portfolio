@@ -31,8 +31,8 @@
                         </div>
                         <div>
                             <h4 class="text-lg font-medium text-white">Email</h4>
-                            <a href="mailto:rashad@dream71.com"
-                                class="text-gray-300 hover:text-indigo-400 transition-colors">rashad@dream71.com</a>
+                            <a href="mailto:{{ $contact->email }}"
+                                class="text-gray-300 hover:text-indigo-400 transition-colors">{{ $contact->email }}</a>
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
                         </div>
                         <div>
                             <h4 class="text-lg font-medium text-white">Phone</h4>
-                            <p class="text-gray-300">+8801715091734</p>
+                            <p class="text-gray-300">{{ $contact->phone }}</p>
                         </div>
                     </div>
 
@@ -52,14 +52,8 @@
                 <div class="mt-8">
                     <h4 class="text-lg font-medium mb-4">Connect With Me</h4>
                     <div class="flex gap-4">
-                        <a href="https://www.facebook.com/adharer.alo" target="_blank"
-                            class="bg-slate-700 hover:bg-indigo-600 transition-colors duration-300 p-3 rounded-lg text-white">
-                            <i class="ri-facebook-fill text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/rashadkabir/" target="_blank"
-                            class="bg-slate-700 hover:bg-indigo-600 transition-colors duration-300 p-3 rounded-lg text-white">
-                            <i class="ri-linkedin-fill text-xl"></i>
-                        </a>
+                        <a href="{{ $contact->facebook }}" target="_blank" class="..."><i class="ri-facebook-fill text-xl"></i></a>
+                        <a href="{{ $contact->linkedin }}" target="_blank" class="..."><i class="ri-linkedin-fill text-xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -70,13 +64,14 @@
                     <i class="ri-send-plane-line text-indigo-400"></i> Send Me a Message
                 </h3>
 
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" action="{{ route('contact.send') }}" method="POST" class="space-y-6">
+                    @csrf
                     <div class="grid md:grid-cols-2 gap-4">
                         <div class="form-group">
                             <label for="name" class="block text-gray-300 mb-2">Name</label>
                             <div class="relative">
                                 <i class="ri-user-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                                <input type="text" id="name"
+                                <input type="text" id="name" name="name"
                                     class="w-full bg-slate-900/70 border border-slate-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-indigo-500 transition-colors"
                                     placeholder="Your name">
                             </div>
@@ -86,7 +81,7 @@
                             <label for="email" class="block text-gray-300 mb-2">Email</label>
                             <div class="relative">
                                 <i class="ri-mail-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                                <input type="email" id="email"
+                                <input type="email" id="email" name="email"
                                     class="w-full bg-slate-900/70 border border-slate-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-indigo-500 transition-colors"
                                     placeholder="Your email">
                             </div>
@@ -97,7 +92,7 @@
                         <label for="subject" class="block text-gray-300 mb-2">Subject</label>
                         <div class="relative">
                             <i class="ri-bookmark-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                            <input type="text" id="subject"
+                            <input type="text" id="subject" name="subject"
                                 class="w-full bg-slate-900/70 border border-slate-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-indigo-500 transition-colors"
                                 placeholder="Subject">
                         </div>
@@ -107,14 +102,14 @@
                         <label for="message" class="block text-gray-300 mb-2">Message</label>
                         <div class="relative">
                             <i class="ri-chat-1-line absolute left-3 top-3 text-gray-400"></i>
-                            <textarea id="message" rows="5"
+                            <textarea id="message" name="message" rows="5"
                                 class="w-full bg-slate-900/70 border border-slate-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-indigo-500 transition-colors"
                                 placeholder="Your message"></textarea>
                         </div>
                     </div>
 
                     <div class="flex items-center gap-2 text-gray-300">
-                        <input type="checkbox" id="consent" class="accent-indigo-600 w-4 h-4">
+                        <input type="checkbox" id="consent" name="consent" class="accent-indigo-600 w-4 h-4">
                         <label for="consent">I agree to the privacy policy and terms of service</label>
                     </div>
 
@@ -122,16 +117,26 @@
                         class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium">
                         <i class="ri-send-plane-fill"></i>
                         Send Message
-                        <span class="send-icon-wrapper"></span>
                     </button>
+
                 </form>
 
                 <!-- Form Success Message (hidden by default) -->
-                <div id="form-success"
-                    class="hidden bg-green-600/20 border border-green-500/30 text-green-400 p-4 rounded-lg mt-6 flex items-center gap-3">
+                @if(session('success'))
+                <div id="form-success" class="bg-green-600/20 border border-green-500/30 text-green-400 p-4 rounded-lg mt-6 flex items-center gap-3">
                     <i class="ri-checkbox-circle-line text-xl"></i>
-                    <p>Your message has been sent successfully! I'll get back to you soon.</p>
+                    <p>{{ session('success') }}</p>
                 </div>
+                @endif
+
+                @if(session('error'))
+                <div class="bg-red-600/20 border border-red-500/30 text-red-400 p-4 rounded-lg mt-6 flex items-center gap-3">
+                    <i class="ri-close-circle-line text-xl"></i>
+                    <p>{{ session('error') }}</p>
+                </div>
+                @endif
+
+
             </div>
         </div>
     </div>
@@ -142,35 +147,29 @@
         const formSuccess = document.getElementById('form-success');
 
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
 
-            // Simulate form submission
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
 
-            // Change button text and disable
+            // Start loading state
             submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Sending...';
             submitButton.disabled = true;
 
-            // Simulate API call
+            // Simulate delay (e.g., sending via AJAX or backend)
             setTimeout(() => {
-                // Reset form
-                contactForm.reset();
+                contactForm.reset(); // Reset form fields
+                formSuccess.classList.remove('hidden'); // Show success message
 
-                // Show success message
-                formSuccess.classList.remove('hidden');
-
-                // Reset button
+                // Restore button
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
 
-                // Hide success message after 5 seconds
+                // Auto-hide success message after 5 seconds
                 setTimeout(() => {
                     formSuccess.classList.add('hidden');
                 }, 5000);
-            }, 1500);
+            }, 1500); // Simulate delay
         });
-
         // Input Focus Animation
         const formInputs = document.querySelectorAll('input, textarea');
 

@@ -16,12 +16,23 @@
         </div>
 
         <div class="w-full max-w-md bg-white rounded-xl shadow-lg dark:bg-gray-800 dark:border dark:border-gray-700 p-6 sm:p-8 space-y-6">
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Log in</h1>
+            <h1 class="text-2xl font-bold text-center text-gray-900 dark:text-white">Log in</h1>
+            @if ($errors->has('message'))
+            <div class="mb-4 text-red-600 font-medium">
+                {{ $errors->first('message') }}
+            </div>
+            @endif
+
             <form method="POST" action="{{ route('admin.login') }}" class="space-y-6">
                 @csrf
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
                     <input type="email" name="email" id="email" class="w-full px-4 py-3 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-600 dark:focus:border-blue-600 transition duration-200" required>
+                    @if ($errors->has('email'))
+                    <div class="text-red-500 text-sm mt-2">
+                        {{ $errors->first('email') }}
+                    </div>
+                    @endif
                 </div>
                 <div>
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>

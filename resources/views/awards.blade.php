@@ -14,39 +14,35 @@
         </div>
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
+            @foreach ($awards as $award)
             <div class="project-card group" data-category="web">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
+                <div class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
                     <!-- Project Image -->
                     <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Daily Star ICT Award 2020.jpg') }}"  alt="E-commerce Platform"
+                        <img src="{{ asset($award->image) }}" alt="{{ $award->title }}"
                             class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
                     </div>
 
                     <!-- Project Content -->
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Daily Star ICT Award 2020</h3>
-                        <p class="text-gray-400 mb-4">Dream71 Bangladesh Ltd has won the prestigious Daily Star ICT
-                            Award : ICT Company of the Year 2020 ( International Market Focus) for it’s contribution
-                            to the economoy.</p>
-
+                        <h3 class="text-xl font-semibold mb-2 text-white">{{ $award->title }}</h3>
+                        <p class="text-gray-400 mb-4">{{ $award->description }}</p>
                     </div>
 
-                    <!-- View Case Study Button -->
+                    @if ($award->link)
                     <div class="p-6 pt-0">
-                        <a href="https://www.facebook.com/watch/?v=10221276831924982" target="_blank"
+                        <a href="{{ $award->link }}" target="_blank"
                             class="inline-block text-indigo-400 hover:text-indigo-300 font-medium text-sm transition-colors duration-300 flex items-center gap-1">
                             Open The Article <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
+                    @endif
                 </div>
             </div>
-
+            @endforeach
         </div>
+
 
         <script>
             // Project Filtering

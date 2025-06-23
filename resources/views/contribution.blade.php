@@ -11,169 +11,29 @@
                 <span class="text-gradient">Contribution To BASIS</span>
             </h2>
         </div>
+
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
-            <div class="project-card group" data-category="web">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Convener of BASIS Outsourcing Award.jpg') }}" alt="E-commerce Platform"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Convener of BASIS Outsourcing Award 2021 &
-                            2020</h3>
-                        <p class="text-gray-400 mb-4">Rashad Kabir is the convenor of BASIS Outsoucing Award 2021.
-                            BASIS Outsoucing award is the most
-                            prestigious award for the outsoucing professionals and companies. In the year 2021, 100
-                            awards will
-                            be given in different catagory including company and individual.</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div class="project-card group" data-category="mobile">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Convener of Japan IT Week 2018 and 2019.jpg') }}" alt="Fitness Tracking App"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
+            @foreach ($contributions as $item)
+                <div class="project-card group" data-category="{{ $item->category }}">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
+                        <!-- Project Image -->
+                        <div class="overflow-hidden relative">
+                            <img src="{{ asset($item->image_path) }}" alt="{{ $item->title }}"
+                                 class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
                         </div>
 
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Convener of Japan IT Week 2018 and 2019
-                        </h3>
-                        <p class="text-gray-400 mb-4">Every year BASIS is participating in Japan IT Week since 2013,
-                            which is the most prestigious ICT
-                            fair of Japan. Rashad was the convenor of the BASIS delegates team in the year 2018 and
-                            2019.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Organizer of BASIS Soft Expo 2017,2018 and 2019.jpg') }}" alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Organizer of BASIS Soft Expo 2017,2018 and
-                            2019</h3>
-                        <p class="text-gray-400 mb-4">Rashad has worked very promptly in organizing the BASIS
-                            Softexpo 2017 , 2018 and 2019. He has
-                            organized multiple seminars in those events.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Working on the SOP Guideline and Operation of Cash Incentive procedure.jpg') }}"
-                            alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Working on the SOP Guideline and Operation
-                            of Cash Incentive procedure</h3>
-                        <p class="text-gray-400 mb-4">From June 2018, BASIS companies are getting 10% cash incentive
-                            for the IT and ITES export. Till now
-                            more than 285+ companies have earned 300+ CR BDT as cash incentive. Rashad is working
-                            closely to
-                            formulate SOP for the cash incentive procedures, doing different meetings with
-                            Bangladesh Bank and
-                            other relevant ministry to make the process smoother.</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Convener of Japan IT Week 2018 and 20192.jpg') }}" alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
+                        <!-- Project Content -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-white">{{ $item->title }}</h3>
+                            <p class="text-gray-400 mb-4">{{ $item->description }}</p>
                         </div>
                     </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Convener of Japan IT Week 2018 and 2019
-                        </h3>
-                        <p class="text-gray-400 mb-4">Every year BASIS is participating in Japan IT Week since 2013,
-                            which is the most prestigious ICT
-                            fair of Japan. Rashad was the convenor of the BASIS delegates team in the year 2018 and
-                            2019.</p>
-                    </div>
                 </div>
-            </div>
-
-            <!-- Project Card 5 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Organizer of BASIS Soft Expo 2017,2018 and 20193.jpg') }}"
-                            alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Organizer of BASIS Soft Expo 2017,2018 and
-                            2019</h3>
-                        <p class="text-gray-400 mb-4">Rashad has worked very promptly in organizing the BASIS
-                            Softexpo 2017 , 2018 and 2019. He has
-                            organized multiple seminars in those events.</p>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
+    </div>
 
         <script>
             // Project Filtering

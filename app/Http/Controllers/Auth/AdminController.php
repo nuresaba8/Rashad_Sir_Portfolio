@@ -28,9 +28,9 @@ class AdminController extends Controller
         }
 
 
-        return redirect(route('admin.loginGet'))->withErrors([
-            'email' => 'Invalid login detail.',
-        ]);
+        return back()->withErrors([
+            'message' => 'Invalid email or password',
+        ])->withInput();
     }
 
 

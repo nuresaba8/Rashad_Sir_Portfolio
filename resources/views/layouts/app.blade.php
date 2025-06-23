@@ -81,76 +81,78 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6">
-                    <ul class="flex gap-2 items-center">
+                    <ul class="flex gap-2">
                         <li>
                             <a href="{{ url('/') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 Home
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/experience') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 Experience
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/articles') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 Articles
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/contribution') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center leading-tight">
-                                Contribution<br>To BASIS
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
+                                Contribution
+                                To BASIS
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/tv_shows') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center leading-tight">
-                                TV<br>Shows
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
+                                TV
+                                Shows
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/news') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 News
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/international') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 International
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/awards') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 Award
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/contact') }}"
-                                class="nav-link flex flex-col justify-center items-center h-[60px] px-4 py-2 rounded-lg font-semibold transition-all duration-300
-                      hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
-                      hover:font-bold hover:text-shadow-md text-center">
+                                class="nav-link px-4 py-2 rounded-lg font-semibold transition-all duration-300
+            hover:bg-slate-800 hover:ring-2 hover:ring-indigo-500/50 hover:shadow-lg
+            hover:font-bold hover:text-shadow-md">
                                 Contact
                             </a>
                         </li>

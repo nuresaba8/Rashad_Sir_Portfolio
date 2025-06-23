@@ -8,161 +8,33 @@
         <!-- Section Header -->
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                <span class="text-gradient">International Coverage</span>
+                <span class="text-gradient">International</span>
             </h2>
         </div>
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
-            <div class="project-card group" data-category="web">
+            @foreach ($internationals as $project)
+            <div class="project-card group" data-category="{{ $project->category }}">
                 <div
                     class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
                     <!-- Project Image -->
                     <div class="overflow-hidden relative">
-                        <img src="{{ url('images/bhutan.jpg') }}" alt="E-commerce Platform"
+                        <img src="{{ url($project->image) }}" alt="{{ $project->title }}"
                             class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
                         <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
                     </div>
 
                     <!-- Project Content -->
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Collaboration with Bhutan Govt</h3>
-                        <p class="text-gray-400 mb-4">In January 2020, Rashad visited Bhutan and met with the
-                            Honorable Prime Minister of Bhutan Dr Lotey
-                            Tshering, ICT Minister Mr Karma Donnen Wangdi and Health Minister Ms Dechen Wangmo
-                            there. There he
-                            discussed the possibility of ICT collaboration scope between two countries.</p>
-
+                        <h3 class="text-xl font-semibold mb-2 text-white">{{ $project->title }}</h3>
+                        <p class="text-gray-400 mb-4">{{ $project->description }}</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Project Card 2 -->
-            <div class="project-card group" data-category="mobile">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Convener of Japan IT Week 2018 and 2019.jpg') }}"  alt="Fitness Tracking App"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Collaboration with Maldives</h3>
-                        <p class="text-gray-400 mb-4">Rashad Kabir is also working in Maldives market. He has
-                            brought the Defence State Minister of Maldives Mr Thoriq Ali Luthufi to Bangladesh
-                            during Digital World 2017.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Collaboration with Japan.jpeg') }}"  alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Collaboration with Japan</h3>
-                        <p class="text-gray-400 mb-4">Japan is one of the Key markets where Rashad is working. He is
-                            also the Director of BASIS Japan
-                            Desk which is responsible for the Bilateral ICT relationship between Bangladesh and
-                            Japan.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Experience in Africa.jpg') }}" alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Experience in Africa</h3>
-                        <p class="text-gray-400 mb-4">Rashad is working in Multiple countries in Africa including
-                            Cameroon, Nigeria, Kenya, Mozambique,
-                            and others.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Collaboration with Turkey.jpg') }}"  alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Collaboration with Turkey</h3>
-                        <p class="text-gray-400 mb-4">Rashad has started also working with the Turkey. Already his
-                            company Dream71 Bangladesh Ltd has
-                            expereince in working with UNDP Turkey. For them they have developed an online
-                            aggregrated
-                            marketplace for the refugees.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 5 -->
-            <div class="project-card group" data-category="ui">
-                <div
-                    class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url('images/Footstep in Timor-Leste.jpg') }}"  alt="Dashboard UI Kit"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60">
-                        </div>
-                    </div>
-
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">Footstep in Timor-Leste</h3>
-                        <p class="text-gray-400 mb-4">Rashad and Dream71 has also expereince in working with
-                            Timor-Leste. Dream71 has developed their
-                            parliament software and also developed educational games for the Ministry of Education,
-                            Timor-Leste.</p>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
+
 
         <script>
             // Project Filtering
