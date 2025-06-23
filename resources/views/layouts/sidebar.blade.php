@@ -76,9 +76,14 @@
             </a>
 
             <!-- Navigation Links -->
-            <nav class="space-y-2">
-                <a href="{{ url('/admin/dashboard') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Dashboard</a>
-                <a href="{{ url('/admin/dashboard/experiences') }}"  class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Experience</a>
+            <nav class="flex-1 space-y-2">
+                <!-- <div class="flex items-center justify-between px-4 mb-3">
+                    <p class="text-sm font-semibold text-gray-300 tracking-wide">Pages</p>
+                    <button class="text-2xl text-purple-400 hover:text-purple-300 leading-none">+</button>
+                </div> -->
+
+                <a href="{{ url('/admin/home') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Home</a>
+                <a href="{{ url('/admin/dashboard/experiences') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Experience</a>
                 <a href="{{ url('/admin/dashboard/articles') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Articles</a>
                 <a href="{{ url('/admin/dashboard/contributionToBasis') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Contribution To BASIS</a>
                 <a href="{{ url('/admin/dashboard/tvShows') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">TV Shows</a>
@@ -86,8 +91,18 @@
                 <a href="{{ url('/admin/dashboard/internationals') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">International</a>
                 <a href="{{ url('/admin/dashboard/awards') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Awards</a>
                 <a href="{{ url('/admin/dashboard/contact') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Contact</a>
-                <a href="{{ url('/admin/logout') }}" class="nav-link block px-4 py-2 rounded-md hover:bg-slate-700 transition">Logout</a>
             </nav>
+
+            <!-- Bottom Buttons -->
+            <div class="mt-6 flex justify-between">
+                <a href="{{ url('/admin/logout') }}" class="bg-pink-600 hover:bg-pink-500 text-white text-sm px-4 py-2 rounded flex items-center gap-1">
+                    <i class="ri-logout-box-r-line"></i> Logout
+                </a>
+                <a href="{{ url('/') }}" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm px-4 py-2 rounded flex items-center gap-1">
+                    <i class="ri-earth-line"></i> Go to Web
+                </a>
+            </div>
+
         </aside>
 
 
@@ -164,10 +179,6 @@
             <script>
                 document.getElementById("current-year").textContent = new Date().getFullYear();
             </script>
-
-
-
-
             <script src="{{ asset('script.js') }}"></script>
 
 

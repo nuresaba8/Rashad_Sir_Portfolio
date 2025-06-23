@@ -10,13 +10,9 @@
                     Professional Experiences
                 </h2>
                 <div class="flex flex-wrap gap-4">
-                    <a href="{{ url('/experience') }}" target="_blank" rel="noopener noreferrer"
-                        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">
-                        🔗 Check the Live Route
-                    </a>
 
                     <a href="{{ route('experiences.create') }}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">
-                        ➕ Add New
+                        + Add New
                     </a>
                 </div>
             </div>

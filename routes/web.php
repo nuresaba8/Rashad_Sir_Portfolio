@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\AwardController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContributionToBASISController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InternationalController;
@@ -17,7 +18,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin/login', [AdminController::class, 'loginGet'])->name('admin.loginGet');
 Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->middleware('auth:admin');
+Route::get('/admin/home', [AdminController::class, 'dashboard'])->middleware('auth:admin');
+
+
+
+// ******Admin/Home*******
+
+Route::middleware('auth:admin')->prefix('admin/home')->name('home.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');            // List all profiles
+    Route::get('/create', [DashboardController::class, 'create'])->name('create');    // Show form to create
+    Route::post('/create', [DashboardController::class, 'store'])->name('store');     // Save new profile
+
+    Route::get('/edit/{home}', [DashboardController::class, 'edit'])->name('edit'); // Show form to edit
+    Route::post('/edit/{home}', [DashboardController::class, 'update'])->name('update'); // Update profile
+
+    Route::post('/{home}/toggle-status', [DashboardController::class, 'toggleStatus'])->name('toggleStatus'); // Toggle active/inactive status
+
+    Route::get('/{home}', [DashboardController::class, 'show'])->name('show');       // Show single profile detail
+    Route::delete('/{home}', [DashboardController::class, 'destroy'])->name('destroy'); // Delete profile
+});
 
 
 

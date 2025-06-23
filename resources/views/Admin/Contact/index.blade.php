@@ -10,9 +10,6 @@
                     Contact Information
                 </h2>
                 <div class="flex flex-wrap gap-4">
-                    <a href="{{ url('/contact') }}" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">
-                        🔗 Check the Live Route
-                    </a>
                     <a href="{{ route('contact.edit') }}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">
                         ✏️ Edit
                     </a>

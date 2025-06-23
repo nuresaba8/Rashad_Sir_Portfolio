@@ -8,6 +8,7 @@ use App\Models\Award;
 use App\Models\Contact;
 use App\Models\ContributionToBASIS;
 use App\Models\Experience;
+use App\Models\Home;
 use App\Models\International;
 use App\Models\News;
 use App\Models\TVShows;
@@ -19,7 +20,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $profile = Home::where('status', 1)->first();
+    return view('index', compact('profile'));
     }
 
     public function experience()

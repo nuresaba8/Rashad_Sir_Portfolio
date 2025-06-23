@@ -8,15 +8,9 @@
             <div class="flex justify-between items-center">
                 <h2 class="flex items-center gap-3 text-2xl font-extrabold bg-gradient-to-r from-pink-500 to-cyan-400 text-transparent bg-clip-text">Articles</h2>
                 <div class="flex flex-wrap gap-4">
-                    <a href="{{ url('/articles') }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">
-                        🔗 Check the Live Route
-                    </a>
 
                     <a href="{{ route('articles.create') }}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">
-                        ➕ Add New
+                        + Add New
                     </a>
                 </div>
             </div>

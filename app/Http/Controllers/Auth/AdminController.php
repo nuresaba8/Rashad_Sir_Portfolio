@@ -24,7 +24,7 @@ class AdminController extends Controller
 
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended('/admin/home');
         }
 
 
@@ -36,7 +36,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('Dashboard.dashboard');
+        return view('Admin.Home.index');
     }
 
     public function logout()
