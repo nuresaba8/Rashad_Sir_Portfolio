@@ -15,32 +15,41 @@
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach ($awards as $award)
-            <div class="project-card group" data-category="web">
-                <div class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ asset($award->image) }}" alt="{{ $award->title }}"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-                    </div>
+            @if ($award->link)
+            <a href="{{ $award->link }}" target="_blank" class="block group h-full">
+                @endif
 
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">{{ $award->title }}</h3>
-                        <p class="text-gray-400 mb-4">{{ $award->description }}</p>
-                    </div>
+                <div class="project-card group h-full" data-category="web">
+                    <div class="flex flex-col justify-between h-full relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 transform transition-all duration-500 hover:-translate-y-2">
 
-                    @if ($award->link)
-                    <div class="p-6 pt-0">
-                        <a href="{{ $award->link }}" target="_blank"
-                            class="inline-block text-indigo-400 hover:text-indigo-300 font-medium text-sm transition-colors duration-300 flex items-center gap-1">
+                        <!-- Image -->
+                        <div class="overflow-hidden relative">
+                            <img src="{{ asset($award->image) }}" alt="{{ $award->title }}"
+                                class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-white">{{ $award->title }}</h3>
+                            <p class="text-gray-400 mb-4 line-clamp-3">{{ $award->description }}</p>
+                        </div>
+
+                        @if ($award->link)
+                        <!-- Footer -->
+                        <div class="p-6 pt-0 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300">
                             Open The Article <i class="ri-arrow-right-line"></i>
-                        </a>
+                        </div>
+                        @endif
+
                     </div>
-                    @endif
                 </div>
-            </div>
+
+                @if ($award->link)
+            </a>
+            @endif
             @endforeach
+
         </div>
 
 

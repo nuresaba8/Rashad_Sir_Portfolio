@@ -15,31 +15,33 @@
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($articles as $article)
-            <div class="project-card group" data-category="web">
-                <div class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
+            <a href="{{ $article->article_url }}" target="_blank"
+                class="inline-block text-indigo-400 hover:text-indigo-300 font-medium text-sm transition-colors duration-300 flex items-center gap-1">
 
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url($article->image_url) }}" alt="{{ $article->title }}"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-                    </div>
+                <div class="project-card group h-full" data-category="web">
+                    <div class="flex flex-col justify-between h-full relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 transform transition-all duration-500 hover:-translate-y-2">
 
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">{{ $article->title }}</h3>
-                        <p class="text-gray-400 mb-4">{{ Str::limit($article->description, 300) }}</p>
-                    </div>
+                        <!-- Project Image -->
+                        <div class="overflow-hidden relative">
+                            <img src="{{ url($article->image_url) }}" alt="{{ $article->title }}"
+                                class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                        </div>
 
-                    <!-- View Article Button -->
-                    <div class="p-6 pt-0">
-                        <a href="{{ $article->article_url }}" target="_blank"
-                            class="inline-block text-indigo-400 hover:text-indigo-300 font-medium text-sm transition-colors duration-300 flex items-center gap-1">
+                        <!-- Project Content -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-white">{{ $article->title }}</h3>
+                            <p class="text-gray-400 mb-4">{{ Str::limit($article->description, 300) }}</p>
+                        </div>
+
+                        <!-- View Article Button -->
+                        <div class="p-6 pt-0">
                             Open The Article <i class="ri-arrow-right-line"></i>
-                        </a>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             @endforeach
         </div>
 

@@ -14,36 +14,36 @@
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach ($news as $project)
-            <div class="project-card group" data-category="{{ $project->category }}">
-                <div class="relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 h-full transform transition-all duration-500 hover:-translate-y-2">
-                    <!-- Project Image -->
-                    <div class="overflow-hidden relative">
-                        <img src="{{ url($project->image) }}" alt="{{ $project->title }}"
-                            class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-                    </div>
+<a href="{{ $project->link }}" target="_blank" class="block group h-full">
+    <div class="project-card group h-full" data-category="{{ $project->category }}">
+        <div class="flex flex-col justify-between h-full relative overflow-hidden rounded-xl bg-slate-800 border border-slate-700 transform transition-all duration-500 hover:-translate-y-2">
 
-                    <!-- Project Content -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-white">{{ $project->title }}</h3>
-                        <p class="text-gray-400 mb-4">
-                            {{ $project->source }}<br>
-                            {{ \Carbon\Carbon::parse($project->date)->format('M d, Y') }}<br>
-                            {{ $project->description }}
-                        </p>
-                    </div>
-
-                    <!-- View Case Study Button -->
-                    <div class="p-6 pt-0">
-                        <a href="{{ $project->link }}" target="_blank"
-                            class="inline-block text-indigo-400 hover:text-indigo-300 font-medium text-sm transition-colors duration-300 flex items-center gap-1">
-                            Open The Article <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- Image -->
+            <div class="overflow-hidden relative">
+                <img src="{{ url($project->image) }}" alt="{{ $project->title }}"
+                    class="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
             </div>
-            @endforeach
+
+            <!-- Content -->
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-white">{{ $project->title }}</h3>
+                <p class="text-gray-400 mb-4">
+                    {{ $project->source }}<br>
+                    {{ \Carbon\Carbon::parse($project->date)->format('M d, Y') }}<br>
+                    <span class="line-clamp-3">{{ $project->description }}</span>
+                </p>
+            </div>
+
+            <!-- Footer (optional text if needed) -->
+            <div class="p-6 pt-0 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300">
+                Open The Article <i class="ri-arrow-right-line"></i>
+            </div>
+        </div>
+    </div>
+</a>
+@endforeach
+
         </div>
 
         <script>
